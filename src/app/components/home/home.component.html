@@ -1,0 +1,20 @@
+<p>home works!</p>
+<p>les projets :</p>
+<div *ngFor="let project of projects">
+<h1>
+  {{project.name}}
+</h1>
+  <h2>
+    {{project.type?.name}}
+  </h2>
+<p>
+  {{project.description}}
+</p>
+
+</div>
+<div *ngIf="projects.length > itemsPerPage">
+  <button (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
+  <span>Page {{currentPage}} of {{totalPages}}</span>
+  <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+</div>
+<!-- <p *ngFor="let projet of projects">{{projet.name}}</p> -->
