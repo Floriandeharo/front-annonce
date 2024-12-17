@@ -1,4 +1,7 @@
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -6,13 +9,16 @@ import { AuthService } from 'src/app/services/auth.service';
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
+  standalone: true,
+  imports: [FormsModule, CommonModule, HttpClientModule] // Ajoutez ici les modules nécessaires pour ce composant
+
 })
 export class LoginComponent {
   username = '';
   password = '';
   errorMessage = '';
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router ) {}
 
   login(): void {
     console.log('login LoginComponent')

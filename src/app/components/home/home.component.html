@@ -1,4 +1,56 @@
-<p>home works!</p>
+
+<div class="container-fluid">
+
+
+        <!-- Header-->
+        <header class="bg-dark py-5">
+          <div class="container px-4 px-lg-5 my-5">
+              <div class="text-center text-white">
+                  <h1 class="display-4 fw-bolder">Gestion des Projets</h1>
+                  <p class="lead fw-normal text-white-50 mb-0">gestion de projets</p>
+              </div>
+          </div>
+      </header>
+      <div class="container">
+          <div class="row">
+    <div class="col-lg-4" *ngFor="let project of projects">
+      <div class="card card-margin">
+          <div class="card-header no-border">
+              <h5 class="card-title">MOM</h5>
+          </div>
+          <div class="card-body pt-0">
+              <div class="widget-49">
+                  <div class="widget-49-title-wrapper">
+                      <div class="widget-49-date-primary">
+                          <span class="widget-49-date-day">09</span>
+                          <span class="widget-49-date-month">apr</span>
+                      </div>
+                      <div class="widget-49-meeting-info">
+                          <span class="widget-49-pro-title">PRO-08235 DeskOpe. Website</span>
+                          <span class="widget-49-meeting-time">12:00 to 13.30 Hrs</span>
+                      </div>
+                  </div>
+                  <ol class="widget-49-meeting-points">
+                      <li class="widget-49-meeting-item"><span>Expand module is removed</span></li>
+                      <li class="widget-49-meeting-item"><span>Data migration is in scope</span></li>
+                      <li class="widget-49-meeting-item"><span>Session timeout increase to 30 minutes</span></li>
+                  </ol>
+                  <div class="widget-49-meeting-action">
+                      <a href="#" class="btn btn-sm btn-flash-border-primary">View All</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+
+
+
+
+  </div>
+      </div>
+
+</div>
+<!-- <p>home works!</p>
 <p>les projets :</p>
 <div *ngFor="let project of projects">
 <h1>
@@ -16,5 +68,5 @@
   <button (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
   <span>Page {{currentPage}} of {{totalPages}}</span>
   <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
-</div>
+</div> -->
 <!-- <p *ngFor="let projet of projects">{{projet.name}}</p> -->
