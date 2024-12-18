@@ -20,10 +20,6 @@ export class AppComponent {
         routerLink: '/home'
     },
     {
-        label: 'Likes',
-        icon: 'pi pi-star'
-    },
-    {
         label: 'Projects',
         icon: 'pi pi-search',
     },

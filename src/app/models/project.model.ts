@@ -2,7 +2,7 @@ import { Type } from './type.model'; // Assurez-vous que Type est défini
 import { Comment } from './comment.model' // Assurez-vous que Comment est défini
 
 export class Project {
-  projectId!: number; // Correspond à Long projectId en Java
+  id!: number; // Correspond à Long projectId en Java
   name!: string; // Correspond à String name en Java
   link?: string; // Correspond à String link, facultatif
   description?: string; // Correspond à String description, facultatif

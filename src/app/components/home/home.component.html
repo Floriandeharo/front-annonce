@@ -1,9 +1,9 @@
 
-<div class="container-fluid">
+<div class="container-fluid mb-3" style="padding: 0;">
 
 
         <!-- Header-->
-        <header class="bg-dark py-5">
+        <header class="bg-dark py-5 mb-5">
           <div class="container px-4 px-lg-5 my-5">
               <div class="text-center text-white">
                   <h1 class="display-4 fw-bolder">Gestion des Projets</h1>
@@ -12,31 +12,48 @@
           </div>
       </header>
       <div class="container">
+        <div class="row mb-5">
+          <div class="col col-6">
+
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" [(ngModel)]="criteria.name" placeholder="recherche" aria-label="Recipient's username" aria-describedby="button-addon2">
+              <button class="btn btn-outline-secondary" (click)="getProjectsSearch(currentPage)" type="button" id="button-addon2">Recherche</button>
+            </div>
+
+          </div>
+          <div class="col col-3">
+            <select class="form-select"  [(ngModel)]="criteria.type" aria-label="Default select example">
+              <option selected value="All">Tout types</option>
+              <option value="Web">Web</option>
+              <option value="Mobile">Mobile</option>
+              <option value="Desktop">Desktop</option>
+            </select>
+          </div>
+        </div>
           <div class="row">
     <div class="col-lg-4" *ngFor="let project of projects">
       <div class="card card-margin">
           <div class="card-header no-border">
-              <h5 class="card-title">MOM</h5>
+              <h5 class="card-title">
+                {{project.type?.name}}
+              </h5>
           </div>
           <div class="card-body pt-0">
               <div class="widget-49">
                   <div class="widget-49-title-wrapper">
                       <div class="widget-49-date-primary">
-                          <span class="widget-49-date-day">09</span>
-                          <span class="widget-49-date-month">apr</span>
+                        <img src="assets/images/facebook.png" style="max-width: 100%;" alt="">
                       </div>
                       <div class="widget-49-meeting-info">
-                          <span class="widget-49-pro-title">PRO-08235 DeskOpe. Website</span>
+                        <h2>{{project.name}}</h2>
                           <span class="widget-49-meeting-time">12:00 to 13.30 Hrs</span>
                       </div>
                   </div>
-                  <ol class="widget-49-meeting-points">
-                      <li class="widget-49-meeting-item"><span>Expand module is removed</span></li>
-                      <li class="widget-49-meeting-item"><span>Data migration is in scope</span></li>
-                      <li class="widget-49-meeting-item"><span>Session timeout increase to 30 minutes</span></li>
-                  </ol>
+                  <P class="widget-49-meeting-points">
+                      <span>{{project.description}}</span>
+                  </P>
                   <div class="widget-49-meeting-action">
-                      <a href="#" class="btn btn-sm btn-flash-border-primary">View All</a>
+                      <a class="btn btn-sm btn-flash-border-primary" [routerLink]="['/project', project.id]">Voir</a>
                   </div>
               </div>
           </div>

@@ -36,4 +36,21 @@ getAllProjects(page: number): Observable<any> {
 }
 
 
+getSearchProjects(criteria: any, page: number): Observable<any> {
+  const headers = new HttpHeaders({
+    'Content-Type': 'application/json',
+  });
+  // Ajoutez des paramètres de pagination à la requête
+  const params = {
+    name: criteria.name,
+    type: criteria.type,
+    pageable: page.toString(),
+  };
+  console.log("this.authService.getToken()  ",this.authService.getToken());
+  return this.http.get<any>(this.apiUrl+"/search", { params }  );
+
+}
+
+
+
 }
